@@ -13,6 +13,8 @@
 		04C6105C27F39F4800F66ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C6105A27F39F4800F66ACC /* Main.storyboard */; };
 		04C6105E27F39F4C00F66ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C6105D27F39F4C00F66ACC /* Assets.xcassets */; };
 		04C6106127F39F4C00F66ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C6105F27F39F4C00F66ACC /* LaunchScreen.storyboard */; };
+		04C6106927F3A23A00F66ACC /* TMDB-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04C6106827F3A23A00F66ACC /* TMDB-info.plist */; };
+		AD0F8D9377057449166EE30D /* Pods_MobilliumDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EFB9A7BC5A95915F044A92 /* Pods_MobilliumDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		04C6105D27F39F4C00F66ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C6106027F39F4C00F66ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C6106227F39F4C00F66ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C6106827F3A23A00F66ACC /* TMDB-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TMDB-info.plist"; sourceTree = "<group>"; };
+		10B4C49600D201A223CCBA2E /* Pods-MobilliumDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilliumDemo.release.xcconfig"; path = "Target Support Files/Pods-MobilliumDemo/Pods-MobilliumDemo.release.xcconfig"; sourceTree = "<group>"; };
+		64EFB9A7BC5A95915F044A92 /* Pods_MobilliumDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobilliumDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5E751BAD4B8E9D40F21DB1 /* Pods-MobilliumDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobilliumDemo.debug.xcconfig"; path = "Target Support Files/Pods-MobilliumDemo/Pods-MobilliumDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0F8D9377057449166EE30D /* Pods_MobilliumDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				04C6105327F39F4800F66ACC /* MobilliumDemo */,
 				04C6105227F39F4800F66ACC /* Products */,
+				4F39EF08EA4E34B7E2964C15 /* Pods */,
+				D716220F5687D5C9DC2AE53E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,26 @@
 				04C6105D27F39F4C00F66ACC /* Assets.xcassets */,
 				04C6105F27F39F4C00F66ACC /* LaunchScreen.storyboard */,
 				04C6106227F39F4C00F66ACC /* Info.plist */,
+				04C6106827F3A23A00F66ACC /* TMDB-info.plist */,
 			);
 			path = MobilliumDemo;
+			sourceTree = "<group>";
+		};
+		4F39EF08EA4E34B7E2964C15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA5E751BAD4B8E9D40F21DB1 /* Pods-MobilliumDemo.debug.xcconfig */,
+				10B4C49600D201A223CCBA2E /* Pods-MobilliumDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D716220F5687D5C9DC2AE53E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64EFB9A7BC5A95915F044A92 /* Pods_MobilliumDemo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04C6106527F39F4C00F66ACC /* Build configuration list for PBXNativeTarget "MobilliumDemo" */;
 			buildPhases = (
+				95197D7936519A5F0DB48D17 /* [CP] Check Pods Manifest.lock */,
 				04C6104D27F39F4800F66ACC /* Sources */,
 				04C6104E27F39F4800F66ACC /* Frameworks */,
 				04C6104F27F39F4800F66ACC /* Resources */,
+				B0502C0E9663E21592E4BD7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C6106127F39F4C00F66ACC /* LaunchScreen.storyboard in Resources */,
+				04C6106927F3A23A00F66ACC /* TMDB-info.plist in Resources */,
 				04C6105E27F39F4C00F66ACC /* Assets.xcassets in Resources */,
 				04C6105C27F39F4800F66ACC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95197D7936519A5F0DB48D17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MobilliumDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0502C0E9663E21592E4BD7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilliumDemo/Pods-MobilliumDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobilliumDemo/Pods-MobilliumDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobilliumDemo/Pods-MobilliumDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04C6104D27F39F4800F66ACC /* Sources */ = {
@@ -284,6 +356,7 @@
 		};
 		04C6106627F39F4C00F66ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA5E751BAD4B8E9D40F21DB1 /* Pods-MobilliumDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,8 +368,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +381,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04C6106727F39F4C00F66ACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10B4C49600D201A223CCBA2E /* Pods-MobilliumDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,8 +399,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +412,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
