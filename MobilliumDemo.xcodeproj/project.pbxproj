@@ -14,6 +14,10 @@
 		0424E01827F4561A00463375 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01727F4561A00463375 /* TMDBService.swift */; };
 		0424E01A27F4564C00463375 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01927F4564C00463375 /* URLs.swift */; };
 		0424E01C27F4597300463375 /* NetworkResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01B27F4597300463375 /* NetworkResponseModel.swift */; };
+		0424E01E27F48AD700463375 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01D27F48AD700463375 /* HomeViewModel.swift */; };
+		0424E02027F48AE900463375 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01F27F48AE900463375 /* MovieDetailViewModel.swift */; };
+		0424E02227F48B4700463375 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E02127F48B4700463375 /* ObservableObject.swift */; };
+		0424E02527F4906800463375 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E02427F4906800463375 /* Constant.swift */; };
 		04C6105527F39F4800F66ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105427F39F4800F66ACC /* AppDelegate.swift */; };
 		04C6105727F39F4800F66ACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105627F39F4800F66ACC /* SceneDelegate.swift */; };
 		04C6105927F39F4800F66ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105827F39F4800F66ACC /* ViewController.swift */; };
@@ -32,6 +36,10 @@
 		0424E01727F4561A00463375 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
 		0424E01927F4564C00463375 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		0424E01B27F4597300463375 /* NetworkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseModel.swift; sourceTree = "<group>"; };
+		0424E01D27F48AD700463375 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0424E01F27F48AE900463375 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		0424E02127F48B4700463375 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		0424E02427F4906800463375 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		04C6105127F39F4800F66ACC /* MobilliumDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilliumDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C6105427F39F4800F66ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C6105627F39F4800F66ACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,8 @@
 		0424E00927F44F6400463375 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0424E01D27F48AD700463375 /* HomeViewModel.swift */,
+				0424E01F27F48AE900463375 /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +120,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		0424E02327F48B8200463375 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0424E02127F48B4700463375 /* ObservableObject.swift */,
+				0424E02427F4906800463375 /* Constant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		04C6104827F39F4800F66ACC = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +150,7 @@
 		04C6105327F39F4800F66ACC /* MobilliumDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0424E02327F48B8200463375 /* Util */,
 				0424E01127F454B600463375 /* Network */,
 				0424E00827F44F5D00463375 /* Model */,
 				0424E00927F44F6400463375 /* ViewModel */,
@@ -280,13 +300,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C6105927F39F4800F66ACC /* ViewController.swift in Sources */,
+				0424E01E27F48AD700463375 /* HomeViewModel.swift in Sources */,
 				0424E01C27F4597300463375 /* NetworkResponseModel.swift in Sources */,
 				04C6105527F39F4800F66ACC /* AppDelegate.swift in Sources */,
 				0424E01A27F4564C00463375 /* URLs.swift in Sources */,
 				0424E01027F4532700463375 /* MovieNowPlaying.swift in Sources */,
 				04C6105727F39F4800F66ACC /* SceneDelegate.swift in Sources */,
 				0424E01627F454F400463375 /* TMDBProtocol.swift in Sources */,
+				0424E02027F48AE900463375 /* MovieDetailViewModel.swift in Sources */,
+				0424E02227F48B4700463375 /* ObservableObject.swift in Sources */,
 				0424E00C27F4523400463375 /* MovieDetail.swift in Sources */,
+				0424E02527F4906800463375 /* Constant.swift in Sources */,
 				0424E01827F4561A00463375 /* TMDBService.swift in Sources */,
 				0424E00E27F452E800463375 /* MovieUpcoming.swift in Sources */,
 			);
