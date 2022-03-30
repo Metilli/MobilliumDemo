@@ -14,6 +14,7 @@ struct URLs{
     static let movieDetail = baseUrl + "movie/"
     static let upcoming = baseUrl + "movie/upcoming?api_key=" + apiKey
     static let nowPlaying = baseUrl + "movie/now_playing?api_key=" + apiKey
+    static let imageUrl = "https://image.tmdb.org/t/p/original"
     
     static var apiKey: String {
       get {

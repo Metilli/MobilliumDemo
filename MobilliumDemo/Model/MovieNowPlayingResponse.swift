@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieNowPlaying: Codable {
+struct MovieNowPlayingResponse: Codable {
     let dates: Dates?
     let page: Int?
     let results: [MovieResult]?

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0424E00C27F4523400463375 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00B27F4523400463375 /* MovieDetail.swift */; };
-		0424E00E27F452E800463375 /* MovieUpcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00D27F452E800463375 /* MovieUpcoming.swift */; };
-		0424E01027F4532700463375 /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00F27F4532700463375 /* MovieNowPlaying.swift */; };
+		0424E00C27F4523400463375 /* MovieDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00B27F4523400463375 /* MovieDetailResponse.swift */; };
+		0424E00E27F452E800463375 /* MovieUpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00D27F452E800463375 /* MovieUpcomingResponse.swift */; };
+		0424E01027F4532700463375 /* MovieNowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E00F27F4532700463375 /* MovieNowPlayingResponse.swift */; };
 		0424E01627F454F400463375 /* TMDBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01527F454F400463375 /* TMDBProtocol.swift */; };
 		0424E01827F4561A00463375 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01727F4561A00463375 /* TMDBService.swift */; };
 		0424E01A27F4564C00463375 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01927F4564C00463375 /* URLs.swift */; };
@@ -18,6 +18,7 @@
 		0424E02027F48AE900463375 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E01F27F48AE900463375 /* MovieDetailViewModel.swift */; };
 		0424E02227F48B4700463375 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E02127F48B4700463375 /* ObservableObject.swift */; };
 		0424E02527F4906800463375 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E02427F4906800463375 /* Constant.swift */; };
+		0424E02927F4A00300463375 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E02827F4A00300463375 /* MovieDetail.swift */; };
 		04C6105527F39F4800F66ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105427F39F4800F66ACC /* AppDelegate.swift */; };
 		04C6105727F39F4800F66ACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105627F39F4800F66ACC /* SceneDelegate.swift */; };
 		04C6105927F39F4800F66ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6105827F39F4800F66ACC /* ViewController.swift */; };
@@ -29,9 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0424E00B27F4523400463375 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
-		0424E00D27F452E800463375 /* MovieUpcoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieUpcoming.swift; sourceTree = "<group>"; };
-		0424E00F27F4532700463375 /* MovieNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNowPlaying.swift; sourceTree = "<group>"; };
+		0424E00B27F4523400463375 /* MovieDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailResponse.swift; sourceTree = "<group>"; };
+		0424E00D27F452E800463375 /* MovieUpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieUpcomingResponse.swift; sourceTree = "<group>"; };
+		0424E00F27F4532700463375 /* MovieNowPlayingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNowPlayingResponse.swift; sourceTree = "<group>"; };
 		0424E01527F454F400463375 /* TMDBProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBProtocol.swift; sourceTree = "<group>"; };
 		0424E01727F4561A00463375 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
 		0424E01927F4564C00463375 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		0424E01F27F48AE900463375 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		0424E02127F48B4700463375 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		0424E02427F4906800463375 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0424E02827F4A00300463375 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		04C6105127F39F4800F66ACC /* MobilliumDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilliumDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C6105427F39F4800F66ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C6105627F39F4800F66ACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +71,10 @@
 		0424E00827F44F5D00463375 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0424E00B27F4523400463375 /* MovieDetail.swift */,
-				0424E00D27F452E800463375 /* MovieUpcoming.swift */,
-				0424E00F27F4532700463375 /* MovieNowPlaying.swift */,
+				0424E00B27F4523400463375 /* MovieDetailResponse.swift */,
+				0424E00D27F452E800463375 /* MovieUpcomingResponse.swift */,
+				0424E00F27F4532700463375 /* MovieNowPlayingResponse.swift */,
+				0424E02827F4A00300463375 /* MovieDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,15 +307,16 @@
 				0424E01C27F4597300463375 /* NetworkResponseModel.swift in Sources */,
 				04C6105527F39F4800F66ACC /* AppDelegate.swift in Sources */,
 				0424E01A27F4564C00463375 /* URLs.swift in Sources */,
-				0424E01027F4532700463375 /* MovieNowPlaying.swift in Sources */,
+				0424E01027F4532700463375 /* MovieNowPlayingResponse.swift in Sources */,
 				04C6105727F39F4800F66ACC /* SceneDelegate.swift in Sources */,
 				0424E01627F454F400463375 /* TMDBProtocol.swift in Sources */,
 				0424E02027F48AE900463375 /* MovieDetailViewModel.swift in Sources */,
 				0424E02227F48B4700463375 /* ObservableObject.swift in Sources */,
-				0424E00C27F4523400463375 /* MovieDetail.swift in Sources */,
+				0424E00C27F4523400463375 /* MovieDetailResponse.swift in Sources */,
 				0424E02527F4906800463375 /* Constant.swift in Sources */,
+				0424E02927F4A00300463375 /* MovieDetail.swift in Sources */,
 				0424E01827F4561A00463375 /* TMDBService.swift in Sources */,
-				0424E00E27F452E800463375 /* MovieUpcoming.swift in Sources */,
+				0424E00E27F452E800463375 /* MovieUpcomingResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

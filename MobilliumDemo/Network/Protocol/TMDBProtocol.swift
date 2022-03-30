@@ -9,10 +9,10 @@ import Foundation
 
 protocol TMDBProtocol{
     
-    func fetchMovieDetail(movieID: String, params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieDetail>) -> ())
+    func fetchMovieDetail(movieID: String, params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieDetailResponse>) -> ())
     
-    func fetchMovieNowPlaying(params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieNowPlaying>) -> ())
+    func fetchMovieNowPlaying(params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieNowPlayingResponse>) -> ())
     
-    func fetchUpcoming(params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieUpcoming>) -> ())
+    func fetchUpcoming(params: [String : Any]?, completionHandler: @escaping (NetworkResponseModel<MovieUpcomingResponse>) -> ())
     
 }
