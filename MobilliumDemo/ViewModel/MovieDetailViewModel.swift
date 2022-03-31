@@ -17,17 +17,18 @@ class MovieDetailViewModel{
     let errorMessage: ObservableObject<String?> = ObservableObject(nil)
     
     let moviePosterURL: ObservableObject<URL?> = ObservableObject(nil)
-    let movieTitle: ObservableObject<String?> = ObservableObject(nil)
-    let movieDescription: ObservableObject<String?> = ObservableObject(nil)
-    let movieRate: ObservableObject<String?> = ObservableObject(nil)
-    let movieReleaseDate: ObservableObject<String?> = ObservableObject(nil)
+    let movieTitle: ObservableObject<String> = ObservableObject("")
+    let movieDescription: ObservableObject<String> = ObservableObject("")
+    let movieRate: ObservableObject<String> = ObservableObject("")
+    let movieReleaseDate: ObservableObject<String> = ObservableObject("")
+    let movieimdbID: ObservableObject<String> = ObservableObject("")
     
     init(movieID: String){
         fetchMovieDetail(movieID: movieID)
     }
     
     private func fetchMovieDetail(movieID: String){
-        guard movieID.isEmpty else {
+        guard !movieID.isEmpty else {
             errorMessage.value = "Movie ID could not found."
             return
         }
@@ -49,13 +50,22 @@ class MovieDetailViewModel{
         }
         
         movieDetailResponse = safeMovie
-        if let safePosterPath = movieDetailResponse.posterPath{
-            moviePosterURL.value = URL(string: safePosterPath)
+        if let safePosterPath = movieDetailResponse.backdropPath{
+            moviePosterURL.value = URL(string: URLs.imageUrl + safePosterPath)
         }
         movieTitle.value = movieDetailResponse.originalTitle ?? "Title not found"
         movieDescription.value = movieDetailResponse.overview ?? "Overview not found"
         movieRate.value = (movieDetailResponse.voteAverage != nil) ? String(movieDetailResponse.voteAverage!) : "-"
-        movieReleaseDate.value = movieDetailResponse.releaseDate ?? "Unkown release date"
+        var releaseDate = "Unkown release date"
         
+        if let safeDate = movieDetailResponse.releaseDate{
+            let dateArray = safeDate.components(separatedBy: "-")
+            let releaseYear = dateArray[0]
+            movieTitle.value = "\(movieTitle.value) (\(releaseYear))"
+            
+            releaseDate = "\(dateArray[2]).\(dateArray[1]).\(dateArray[0])"
+        }
+        movieReleaseDate.value = releaseDate
+        movieimdbID.value = safeMovie.imdbID ?? ""
     }
 }

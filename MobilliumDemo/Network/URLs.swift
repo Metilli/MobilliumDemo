@@ -16,6 +16,8 @@ struct URLs{
     static let nowPlaying = baseUrl + "movie/now_playing?api_key=" + apiKey
     static let imageUrl = "https://image.tmdb.org/t/p/original"
     
+    static let imdbUrl = "https://www.imdb.com/title/"
+    
     static var apiKey: String {
       get {
           
@@ -25,7 +27,7 @@ struct URLs{
         
         let plist = NSDictionary(contentsOfFile: filePath)
         guard let value = plist?.object(forKey: "Api_Key") as? String else {
-          fatalError("Couldn't find key 'API_KEY' in 'TMDB-Info.plist'.")
+          fatalError("Couldn't find key 'API_KEY' in 'TMDB-info.plist'.")
         }
         
         if (value.starts(with: "_")) {

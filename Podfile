@@ -8,5 +8,6 @@ target 'MobilliumDemo' do
   # Pods for MobilliumDemo
   pod 'Alamofire', '~> 5.5'
   pod 'Kingfisher', '~> 7.0'
+  pod 'lottie-ios' 
 
 end

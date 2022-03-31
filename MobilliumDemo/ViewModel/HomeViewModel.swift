@@ -9,16 +9,21 @@ import Foundation
 
 class HomeViewModel{
     
-    let sliderData: ObservableObject<[MovieDetail]?> = ObservableObject(nil)
-    let tableViewData: ObservableObject<[MovieDetail]?> = ObservableObject([])
+    let collectionViewData: ObservableObject<[MovieDetail]> = ObservableObject([])
+    let tableViewData: ObservableObject<[MovieDetail]> = ObservableObject([])
+    let isFetchingTableViewData:ObservableObject<Bool> = ObservableObject(false)
+    let isFetchingCollectionViewData:ObservableObject<Bool> = ObservableObject(false)
     let errorMessage: ObservableObject<String?> = ObservableObject(nil)
     
-    let tmdbService = TMDBService()
-    let params: [String : Any] = [Constant.TMDBParameters.language : "en-US",
+    private let tmdbService = TMDBService()
+    private let params: [String : Any] = [Constant.TMDBParameters.language : "en-US",
                                  Constant.TMDBParameters.adult : false]
     
-    var isFetchingTableViewData = false
-    var upcomingMoviePageNumber = 1
+    private var upcomingMoviePageNumber = 1
+    private var nowPlayingMoviePageNumber = 1
+    
+    private var upcomingTotalPageNumber = 0
+    private var nowPlayingTotalPageNumber = 0
     
     init(){
         fetchMovieUpcoming()
@@ -26,24 +31,32 @@ class HomeViewModel{
     }
     
     func refreshPage(){
-        sliderData.value = nil
-        tableViewData.value = nil
+        collectionViewData.value.removeAll()
+        tableViewData.value.removeAll()
         upcomingMoviePageNumber = 1
+        nowPlayingMoviePageNumber = 1
         
         fetchMovieUpcoming()
         fetchMovieNowPlaying()
     }
     
     func fetchMoreUpcomingMovie(){
+        guard !isFetchingTableViewData.value else { return }
+        
+        guard upcomingMoviePageNumber < upcomingTotalPageNumber else {
+            isFetchingTableViewData.value = false
+            return
+        }
+        
         upcomingMoviePageNumber += 1
         
         fetchMovieUpcoming(pageNumber: upcomingMoviePageNumber)
     }
     
     private func fetchMovieUpcoming(pageNumber: Int = 1){
-        guard !isFetchingTableViewData else { return }
+        guard !isFetchingTableViewData.value else { return }
         
-        isFetchingTableViewData = true
+        isFetchingTableViewData.value = true
         
         var upcomingParams = params
         upcomingParams.updateValue(pageNumber, forKey: Constant.TMDBParameters.page)
@@ -52,21 +65,46 @@ class HomeViewModel{
             switch response.isSuccess(){
             case true:
                 self.updateTableViewData(data: response.data?.results)
-                self.isFetchingTableViewData = false
+                self.upcomingTotalPageNumber = response.data?.totalPages ?? 1
+                self.isFetchingTableViewData.value = false
             default:
                 self.errorMessage.value = response.errorMessage
-                self.isFetchingTableViewData = false
+                self.isFetchingTableViewData.value = false
             }
         }
     }
+    
+    func fetchMoreMovieNowPlaying(){
+        guard !isFetchingCollectionViewData.value else { return }
+        
+        guard nowPlayingMoviePageNumber < nowPlayingTotalPageNumber else {
+            isFetchingCollectionViewData.value = false
+            return
+        }
+        
+        nowPlayingMoviePageNumber += 1
+        
+        fetchMovieNowPlaying(pageNumber: nowPlayingMoviePageNumber)
+    }
 
-    private func fetchMovieNowPlaying(){
-        tmdbService.fetchMovieNowPlaying(params: params) { response in
+    private func fetchMovieNowPlaying(pageNumber: Int = 1){
+        guard !isFetchingCollectionViewData.value else { return }
+        
+        self.isFetchingCollectionViewData.value = true
+        
+        var upcomingParams = params
+        upcomingParams.updateValue(pageNumber, forKey: Constant.TMDBParameters.page)
+        print(params)
+        
+        tmdbService.fetchMovieNowPlaying(params: upcomingParams) { response in
             switch response.isSuccess(){
             case true:
                 self.updateSliderData(data: response.data?.results)
+                self.nowPlayingTotalPageNumber = response.data?.totalPages ?? 1
+                self.isFetchingCollectionViewData.value = false
             default:
                 self.errorMessage.value = response.errorMessage
+                self.isFetchingCollectionViewData.value = false
             }
         }
     }
@@ -78,7 +116,7 @@ class HomeViewModel{
         }
         
         let newResults = decodeMovieResult(results: safeResults)
-        tableViewData.value? += newResults
+        tableViewData.value += newResults
     }
     
     private func updateSliderData(data: [MovieResult]?){
@@ -87,16 +125,23 @@ class HomeViewModel{
             return
         }
         
-        sliderData.value = decodeMovieResult(results: safeResults)
+        let newResults = decodeMovieResult(results: safeResults, isPosterImage: false)
+        collectionViewData.value += newResults
     }
     
-    private func decodeMovieResult(results: [MovieResult]) -> [MovieDetail]{
+    private func decodeMovieResult(results: [MovieResult], isPosterImage:Bool = true) -> [MovieDetail]{
         var movieArray:[MovieDetail] = []
         
         for movie in results{
             var imageURL:URL?
-            if let safePosterPath = movie.posterPath{
-                imageURL = URL(string: URLs.imageUrl + safePosterPath)
+            if isPosterImage{
+                if let safePosterPath = movie.posterPath{
+                    imageURL = URL(string: URLs.imageUrl + safePosterPath)
+                }
+            }else{
+                if let safePosterPath = movie.backdropPath{
+                    imageURL = URL(string: URLs.imageUrl + safePosterPath)
+                }
             }
             var title = movie.originalTitle ?? "Title not found"
             let description = movie.overview ?? "Overview not found"
@@ -110,7 +155,7 @@ class HomeViewModel{
                 releaseDate = "\(dateArray[2]).\(dateArray[1]).\(dateArray[0])"
             }
             
-            let movie = MovieDetail(imageURL: imageURL, title: title, description: description, releaseDate: releaseDate)
+            let movie = MovieDetail(id: String(movie.id!),imageURL: imageURL, title: title, description: description, releaseDate: releaseDate)
             movieArray.append(movie)
         }
         
